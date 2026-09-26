@@ -4,7 +4,7 @@
 
 # 🌍 Hypixel Skyblock 及更多服务器的 NPC 与物品翻译模组
 
-语言障碍不应该成为您畅玩最喜爱的 Minecraft 服务器的阻碍。**NPC & Items Translator (NPC 与物品翻译器)** 是一款完全可自定义的、智能的客户端 Fabric 模组，能够通过 AI 强大的准确度以及逼真的语音朗读 (TTS)，将 NPC 对话、物品描述和 GUI 提示无缝翻译成您的首选语言！
+语言障碍不应该成为您畅玩最喜爱的 Minecraft 服务器的阻碍。**NPC & Items Translator (NPC 与物品翻译器)** 是一款完全可自定义的、智能的客户端 Fabric 模组，能够通过 AI 强大的准确度、头顶自然浮动气泡以及逼真的语音朗读 (TTS)，将 NPC 对话、物品描述和 GUI 提示无缝翻译成您的首选语言！
 
 该模组专为像 **Hypixel SkyBlock** 这样的大型 RPG/MMO 游戏模式而设计，完美支持复杂的颜色代码、动态数据（如 Bazaar 实时价格）、交互式聊天事件以及 17 种语言的完整 UI 本地化。
 
@@ -12,10 +12,18 @@
 
 ## ✨ 核心功能
 
+### 🗨️ 自然浮动聊天气泡（头顶对话）
+将目光集中在游戏世界中即可阅读！已翻译的消息将直接显示在 3D 世界中 NPC 的头顶上方：
+- **堆叠式对话（漫画/RPG 风格）：** 当 NPC 连续说出多句话时，先前的句子不会消失！较早的气泡会平滑向上滑动堆叠，让您可以按时间顺序从容阅读完整对话。
+- **动态阅读时长：** 气泡停留时间根据文字长度动态计算（`4秒 + 每字符 65毫秒`）。翻译完成后会自动延长停留时间，确保您在阅读完毕前气泡绝不提前消失。
+- **现代化圆角美学：** 柔和圆角漫画气泡框，深石板蓝半透明背景、天蓝色边框、琥珀金色 `[NPC] 名字` 标题，以及指向说话角色的三角形尾巴。
+- **丰富的配置选项：** 在设置菜单中可轻松切换开关、调整基础显示时间（3秒 - 15秒）、限制仅对 NPC 生效以及调整最大可见距离（6格 - 32格）。
+
 ### 💬 交互式聊天翻译
 告别繁琐的手动复制到浏览器！聊天消息旁会自动出现精致的 **[翻译]** (Translate) 按钮。  
 只需点击即可立即将对话翻译为您所需的语言！
 
+- **自定义按钮位置：** 可将 `[翻译]` 按钮放置在消息的**开头**（默认）或**末尾**，也可完全隐藏。
 - **自动翻译选项：** 无需手动点击，自动翻译所有接收到的聊天消息。
 - **仅翻译 NPC：** 仅自动翻译 NPC 对话，保持普通玩家聊天内容不变。
 - **安全且可还原：** 随时点击语言标签（如 `[ZH]`、`[TR]` 等）即可立即将文本还原为原始内容。所有交互式点击事件（例如 *“点击此处打开拍卖行”* 等）均完美保留！
@@ -38,20 +46,20 @@
 *注意：连续按两次相同的翻译键可充当开关并还原翻译。*
 
 ### 🎨 完美保留颜色与排版代码
-与破坏 Minecraft 格式的普通翻译器不同，该模组会智能提取 `§` 颜色代码，翻译文本内容，并准确放回原处的颜色。  
-您的 **Epic (史诗)** 物品依然保持紫色，**Legendary (传奇)** 物品依然保持橙色！
+与破坏 Minecraft 排版的普通翻译工具不同，本模组会自动提取 `§` 颜色代码，翻译纯文本内容后精确还原原始颜色。  
+您的 **史诗 (Epic)** 物品依旧是紫色，**传说 (Legendary)** 物品始终保持橙色！
 
-### 🛡️ 智能错误处理与模型自动回退
-- 若未配置或输入了错误的 API 密钥，物品下方或聊天中将显示清晰的提示。
-- **超限自动回退 (Auto-Fallback)：** 当某个 AI 模型触发速率限制 (429) 时，模组会自动且静默地切换到同一服务商的**下一个可用模型**继续翻译！
+### 🛡️ 智能错误处理与超额自动轮换模型
+- 若未填写 API 密钥或密钥无效，物品提示或聊天中将出现明确提示。
+- **速率超限自动降级：** 当某个 AI 模型达到并发或速率限制 (429) 时，模组会自动静默切换至同一提供商的**下一个可用模型**继续翻译！
 
 ---
 
-## 🌐 支持 17 种语言（界面与翻译）
+## 🌐 17 种受支持语言（界面与翻译）
 
-模组内置了完整的 UI 界面本地化以及对 **17 种主要语言** 的双向翻译支持：
+模组在 UI 本地化以及翻译目标语言中完全支持 **17 种主要语言**：
 
-| 语言 | 语言代码 | 原生名称 |
+| 语言 | 代码 | 本地名称 |
 | :--- | :--- | :--- |
 | 🇬🇧 英语 | `en_us` | English |
 | 🇹🇷 土耳其语 | `tr_tr` | Türkçe |
@@ -62,7 +70,7 @@
 | 🇫🇷 法语 | `fr_fr` | Français |
 | 🇷🇺 俄语 | `ru_ru` | Русский |
 | 🇧🇷 葡萄牙语（巴西） | `pt_br` | Português (Brasil) |
-| 🇮🇩 印度尼西亚语 | `id_id` | Bahasa Indonesia |
+| 🇮🇩 印尼语 | `id_id` | Bahasa Indonesia |
 | 🇩🇪 德语 | `de_de` | Deutsch |
 | 🇯🇵 日语 | `ja_jp` | 日本語 |
 | 🇰🇷 韩语 | `ko_kr` | 한국어 |
@@ -75,40 +83,39 @@
 
 ## ⚙️ 翻译引擎
 
-您可以在配置菜单（`/translate`、ModMenu 或按 **Z** 键）中随时自由选择翻译引擎。
+您可以在配置菜单（通过 `/translate` 命令、ModMenu 或按 **Z** 键）中完全自由选择翻译后端：
 
 | 引擎 | 说明 |
 |---|---|
-| 🤖 **Gemini AI** | Google 最新的 Gemini 模型（Gemini 2.5 Flash, Flash-Lite 等）。在 [Google AI Studio](https://aistudio.google.com) 获取免费密钥。 |
-| ⚡ **Groq AI** | 超快速 LLM（Llama 3.3 70B, Qwen3），深入理解 Minecraft 及 MMO 术语。在 [console.groq.com](https://console.groq.com) 获取免费密钥。 |
-| 🌪️ **Mistral AI** | Mistral 高性能模型（Mistral Large 等）。稳定且质量优异。在 [console.mistral.ai](https://console.mistral.ai) 获取免费密钥。 |
-| 🌍 **OpenRouter AI** | 通过统一接口调用数百种顶级模型（Claude, Llama, Qwen, DeepSeek）。在 [openrouter.ai](https://openrouter.ai) 获取密钥。 |
-| 🌐 **Google 翻译** | 无需任何 API 密钥！开箱即用，无限次快速免费翻译。 |
+| 🤖 **Gemini AI** | 谷歌最新的 Gemini 模型（如 Gemini 2.5 Flash 等）。可在 [Google AI Studio](https://aistudio.google.com) 获取免费 API 密钥。 |
+| ⚡ **Groq AI** | 超快速的开源 LLM（Llama 3.3 70B、Qwen3 等），上下文理解准确。可在 [console.groq.com](https://console.groq.com) 获取免费 API 密钥。 |
+| 🌪️ **Mistral AI** | Mistral 的高性能模型（Mistral Large 等）。可在 [console.mistral.ai](https://console.mistral.ai) 获取免费 API 密钥。 |
+| 🌍 **OpenRouter AI** | 通过统一的 API 访问上百款顶尖模型（Claude、Llama、Qwen、DeepSeek 等）。可在 [openrouter.ai](https://openrouter.ai) 获取密钥。 |
+| 🌐 **Google 翻译** | 无需 API 密钥！免配置、完全免费且快速可用。 |
 
 ---
 
-## 🔧 配置与常用命令
+## 🔧 配置与命令
 
-- **游戏内配置菜单：** `/translate` 命令、**`Z`** 快捷键或 `ESC → 选项 → Mods → NPC & Items Translator`
-- **动态语言：** 自动翻译为您当前游戏客户端语言，亦可手动指定固定目标语言。
+- **游戏内界面：** `/translate` 命令、**`Z`** 快捷键，或 `ESC → 选项 → 模组 → NPC & Items Translator`
+- **动态语言：** 自动匹配您的 Minecraft 游戏语言，或指定固定的目标语言。
 - **按键绑定：** `选项 → 控制 → 按键绑定 → NPC & Items Translator`
-- **重置翻译词典：** `/translate DeleteDict` 或通过游戏内的 Hub 菜单清除。
+- **词典清理：** `/translate DeleteDict` 或通过游戏内菜单清空翻译缓存。
 
 ---
 
 ## 📦 兼容性与运行需求
 
-- **模组加载器：** Fabric
+- **加载器：** Fabric
 - **支持的 Minecraft 版本：** `1.21.11`, `26.1`, `26.2`, `26.3`
-- **前置依赖：** 
+- **前置模组：** 
   - [Fabric API](https://modrinth.com/mod/fabric-api)
   - [YetAnotherConfigLib (YACL)](https://modrinth.com/mod/yacl)
   - [ModMenu](https://modrinth.com/mod/modmenu)
-- **运行端：** 仅限客户端 (Client-side ONLY) — 在包括 Hypixel 在内的所有多人服务器上 100% 安全可用！
+- **运行端：** 仅客户端 (Client-side) — 在包括 Hypixel 在内的所有多人服务器上 100% 安全！
 
 ---
 
-## 📄 许可证
+## 📄 开源许可
 
 MIT 许可证
-

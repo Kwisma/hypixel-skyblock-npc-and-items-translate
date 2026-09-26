@@ -4,7 +4,7 @@
 
 # 🌍 Hypixel Skyblock ve Daha Fazlası İçin NPC & Eşya Çevirici
 
-Favori sunucularınızda oynarken dil engeli artık bir sorun olmamalı. **NPC & Eşya Çevirici (NPC & Items Translator)**; NPC sohbet mesajlarını, eşya açıklamalarını ve GUI ipuçlarını anında kendi dilinize çeviren, akıllı yapay zeka desteği ve sesli okuma (TTS) özelliklerine sahip, tamamen özelleştirilebilir bir istemci tabanlı (client-side) Fabric modudur!
+Favori sunucularınızda oynarken dil engeli artık bir sorun olmamalı. **NPC & Eşya Çevirici (NPC & Items Translator)**; NPC sohbet mesajlarını, eşya açıklamalarını ve GUI ipuçlarını anında kendi dilinize çeviren, akıllı yapay zeka desteği, kafa üstü konuşma balonları ve sesli okuma (TTS) özelliklerine sahip, tamamen özelleştirilebilir bir istemci tabanlı (client-side) Fabric modudur!
 
 Özellikle **Hypixel SkyBlock** gibi yoğun RPG/MMO oyun modları için tasarlanmış olup, karmaşık renk kodlarını, dinamik verileri (Bazaar fiyatları vb.), etkileşimli sohbet mesajlarını ve 17 farklı dil arayüzünü mükemmel şekilde işler.
 
@@ -12,10 +12,18 @@ Favori sunucularınızda oynarken dil engeli artık bir sorun olmamalı. **NPC &
 
 ## ✨ Temel Özellikler
 
+### 🗨️ Doğal Sohbet Balonları (Kafa Üstü Diyaloglar)
+NPC diyaloglarını okumak için sohbet kutusuna bakmanıza gerek yok! Çevrilen mesajlar doğrudan oyun dünyasında karakterlerin başının üzerinde belirir:
+- **Üst Üste Biriken Balonlar (Çizgi Roman / RPG Stili):** NPC arka arkaya birkaç cümle kurduğunda önceki cümleler kaybolmaz! Eski balonlar zarifçe yukarı doğru kayarak sıralı bir yığın oluşturur, böylece tüm diyaloğu kronolojik sırada rahatça okuyabilirsiniz.
+- **Dinamik Okuma Süresi:** Balonun ekranda kalma süresi metnin uzunluğuna göre dinamik olarak hesaplanır (`4s + her harf için 65ms`). Çeviri tamamlandığında balona otomatik ek okuma süresi tanınır; böylece cümleyi bitiremeden balon asla yok olmaz.
+- **Modern Kavisli (Rounded) Tasarım:** Koyu arduvaz arka plan, gök mavisi çerçeve, altın sarısı `[NPC] İsim` başlığı ve konuşan karaktere yönelen işaret kuyruğu ile estetik çizgi roman balonu görünümü.
+- **Gelişmiş Ayarlar:** Menüden açıp kapatabilir, temel gösterim süresini (3s - 15s), sadece NPC'ler filtresini ve maksimum görünürlük mesafesini (6m - 32m) kolayca ayarlayabilirsiniz.
+
 ### 💬 Etkileşimli Sohbet Çevirisi
 Sürekli tarayıcıya metin kopyalamaktan sıkıldınız mı? Sohbet mesajlarının yanında küçük bir **[Çevir]** butonu otomatik olarak belirecektir.  
 Mesajı anında çevirmek için butona tıklamanız yeterli!
 
+- **Özelleştirilebilir Buton Konumu:** `[Çevir]` butonunu mesajın **Başında** (varsayılan) veya **Sonunda** gösterebilir ya da tamamen gizleyebilirsiniz.
 - **Otomatik Çeviri Seçeneği:** Sohbet mesajlarını tıklama gerektirmeden otomatik olarak çevirir.
 - **Sadece NPC'leri Çevir:** Sadece NPC diyaloglarını otomatik çevirir, normal oyuncu sohbetini bozmaz.
 - **Tamamen Geri Döndürülebilir & Güvenli:** Metni orijinal haline döndürmek için **[TR]** veya **[Çevrildi]** etiketine tıklamanız yeterlidir. Orijinal etkileşimli tıklama özellikleri (*"Auction House açmak için tıklayın"* vb.) tamamen korunur!

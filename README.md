@@ -4,7 +4,7 @@
 
 # 🌍 NPC & Items Translator for Hypixel Skyblock & More
 
-Language barriers should never hold you back from enjoying your favorite Minecraft servers. **NPC & Items Translator** is a fully customizable, intelligent client-side Fabric mod that seamlessly translates NPC dialogues, item descriptions, and GUI tooltips into your preferred language with AI-powered accuracy and realistic voice narration (TTS)!
+Language barriers should never hold you back from enjoying your favorite Minecraft servers. **NPC & Items Translator** is a fully customizable, intelligent client-side Fabric mod that seamlessly translates NPC dialogues, item descriptions, and GUI tooltips into your preferred language with AI-powered accuracy, overhead speech bubbles, and realistic voice narration (TTS)!
 
 Built especially with heavy RPG/MMO game modes like **Hypixel SkyBlock** in mind, it flawlessly handles complex color codes, dynamic lore (such as live Bazaar prices), interactive chat actions, and full multi-language UI localization.
 
@@ -12,10 +12,18 @@ Built especially with heavy RPG/MMO game modes like **Hypixel SkyBlock** in mind
 
 ## ✨ Core Features
 
+### 🗨️ Natural Floating Chat Bubbles (Overhead Dialogue)
+Read NPC dialogue where you're already looking! Translated messages appear directly above character heads in the 3D world:
+- **Stacked Dialogue (Comic/RPG Style):** When an NPC speaks multiple lines rapidly, previous lines don't vanish! Earlier sentences slide upward into an elegant vertical stack so you can read everything in chronological order.
+- **Dynamic Reading Duration:** Bubble display time dynamically calculates based on message length (`4s + 65ms per character`). When translation completes, extra reading time is automatically added so you never run out of time before finishing a sentence.
+- **Modern Rounded Aesthetic:** Sleek rounded comic-balloon boxes with dark slate backdrop, sky blue borders, amber gold speaker titles, and a directional pointer tail pointing down to the character.
+- **Full Control in Settings:** Toggle On/Off, adjust base display duration (3s - 15s), restrict to NPCs only, and adjust max visibility distance (6m - 32m).
+
 ### 💬 Interactive Chat Translation
 Tired of copying text to your browser? A clean **[Translate]** button appears automatically next to chat messages.  
 Click it to instantly translate dialogue into your language!
 
+- **Customizable Button Position:** Place the `[Translate]` button at the **Beginning** (default) or **End** of chat messages, or hide it completely.
 - **Auto-Translate Option:** Automatically translate all incoming chat messages without clicking.
 - **Only Translate NPCs:** Only translate NPC dialogue while leaving regular player chat untouched.
 - **Safe & Reversible:** Click the language tag (e.g. `[TR]`, `[EN]`) anytime to revert the text back to its original version. All interactive click events (*"Click to open Auction House"*, etc.) are completely preserved!
@@ -111,4 +119,3 @@ You have full control over the translation backend through the configuration men
 ## 📄 License
 
 MIT License
-

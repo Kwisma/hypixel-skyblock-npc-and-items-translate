@@ -4,7 +4,7 @@
 
 # 🌍 NPC & Items Translator für Hypixel Skyblock & Mehr
 
-Die Sprachbarriere sollte kein Hindernis mehr sein, um Ihre Lieblings-Minecraft-Server zu genießen. **NPC & Items Translator** ist ein vollständig anpassbarer, intelligenter clientseitiger Fabric-Mod, der NPC-Dialoge, Item-Beschreibungen und GUI-Tooltips nahtlos mit KI-Genauigkeit und realistischer Sprachausgabe (TTS) in Ihre bevorzugte Sprache übersetzt!
+Die Sprachbarriere sollte kein Hindernis mehr sein, um Ihre Lieblings-Minecraft-Server zu genießen. **NPC & Items Translator** ist ein vollständig anpassbarer, intelligenter clientseitiger Fabric-Mod, der NPC-Dialoge, Item-Beschreibungen und GUI-Tooltips nahtlos mit KI-Genauigkeit, schwebenden Sprechblasen und realistischer Sprachausgabe (TTS) in Ihre bevorzugte Sprache übersetzt!
 
 Speziell für anspruchsvolle RPG/MMO-Spielmodi wie **Hypixel SkyBlock** entwickelt, verarbeitet dieser Mod komplexe Farbcodes, dynamische Texte (wie Live-Bazaar-Preise), interaktive Chatnachrichten und die UI-Lokalisierung für 17 Sprachen perfekt.
 
@@ -12,10 +12,18 @@ Speziell für anspruchsvolle RPG/MMO-Spielmodi wie **Hypixel SkyBlock** entwicke
 
 ## ✨ Hauptfunktionen
 
+### 🗨️ Natürliche Sprechblasen (Über dem Kopf)
+Lesen Sie Dialoge genau dort, wo Sie hinsehen! Übersetzte Nachrichten erscheinen direkt über den Köpfen der Charaktere in der 3D-Welt:
+- **Gestapelte Dialoge (Comic-/RPG-Stil):** Wenn ein NPC mehrere Sätze hintereinander sagt, verschwinden vorherige Sätze nicht! Ältere Sprechblasen gleiten sanft nach oben in einen vertikalen Stapel, sodass Sie alles in chronologischer Reihenfolge lesen können.
+- **Dynamische Lesedauer:** Die Anzeigedauer berechnet sich dynamisch anhand der Textlänge (`4s + 65ms pro Zeichen`). Nach Abschluss der Übersetzung wird zusätzliche Lesezeit gewährt, damit kein Text vorzeitig verschwindet.
+- **Modernes abgerundetes Design:** Elegante Sprechblasen mit abgerundeten Ecken, schieferblauem Hintergrund, himmelblauer Umrandung, bernsteingoldenem `[NPC] Name`-Titel und einem Richtungspfeil zum Charakter.
+- **Vollständige Konfiguration:** Ein-/Ausschaltbar, Basisdauer (3s - 15s), Nur-NPC-Filter und maximale Sichtweite (6m - 32m) im Einstellungsmenü anpassbar.
+
 ### 💬 Interaktive Chat-Übersetzung
 Haben Sie es satt, Texte in Ihren Browser zu kopieren? Eine saubere Schaltfläche **[Translate]** (Übersetzen) erscheint automatisch neben Chatnachrichten.  
 Klicken Sie darauf, um Dialoge sofort in Ihre Sprache zu übersetzen!
 
+- **Anpassbare Schaltflächenposition:** Platzieren Sie die Schaltfläche am **Anfang** (Standard) oder **Ende** der Chat-Nachricht oder blenden Sie sie ganz aus.
 - **Automatische Übersetzung:** Übersetzt alle eingehenden Chatnachrichten automatisch ohne Klick.
 - **Nur NPCs übersetzen:** Übersetzt nur NPC-Dialoge, während der normale Spielerchat unberührt bleibt.
 - **Sicher & Reversibel:** Klicken Sie jederzeit auf das Sprach-Tag (`[DE]`, `[TR]` usw.), um den Originaltext wiederherzustellen. Alle interaktiven Klick-Ereignisse (*"Klicken, um Auktionshaus zu öffnen"* usw.) bleiben vollständig erhalten!
@@ -38,20 +46,20 @@ Fahren Sie mit der Maus über ein beliebiges Item und drücken Sie benutzerdefin
 *Hinweis: Wenn Sie dieselbe Übersetzungstaste zweimal drücken, wird die Übersetzung zurückgesetzt.*
 
 ### 🎨 Makellose Farberhaltung
-Im Gegensatz zu einfachen Übersetzern, die das Minecraft-Format zerstören, extrahiert dieser Mod `§`-Farbcodes, übersetzt den Inhalt und fügt die Originalfarben exakt wieder ein.  
-Ihre **Epic** (Epischen) Items bleiben lila und Ihre **Legendary** (Legendären) Items bleiben orange!
+Im Gegensatz zu einfachen Übersetzern, die Minecraft-Formatierungen beschädigen, extrahiert dieser Mod `§`-Farbcodes, übersetzt den reinen Text und stellt die Originalfarben wieder her.  
+Ihre **Epischen (Epic)** Items bleiben lila, Ihre **Legendären (Legendary)** Items bleiben orange!
 
-### 🛡️ Intelligente Fehlerbehandlung & Automatischer Modellwechsel
-- Wenn ein API-Schlüssel fehlt oder ungültig ist, wird direkt im Tooltip oder Chat eine verständliche Warnung angezeigt.
-- **Automatischer Modellwechsel bei Limit (Auto-Fallback):** Erreicht ein KI-Modell sein Ratenlimit (429), wechselt der Mod automatisch und lautlos zum **nächsten verfügbaren Modell** desselben Anbieters!
+### 🛡️ Intelligente Fehlerbehandlung & Automatischer Modell-Wechsel
+- Wenn ein API-Schlüssel fehlt oder ungültig ist, wird eine klare Warnung direkt im Item-Tooltip oder im Chat angezeigt.
+- **Automatischer Fallback bei Limit-Überschreitung:** Wenn ein Modell auf Ratenbegrenzungen (429) stößt, schlägt die Übersetzung nicht fehl; der Mod wechselt im Hintergrund automatisch zum **nächsten verfügbaren Modell** desselben Anbieters!
 
 ---
 
 ## 🌐 17 Unterstützte Sprachen (UI & Übersetzung)
 
-Der Mod bietet vollständige UI-Lokalisierung und Übersetzung für **17 Hauptsprachen**:
+Der Mod bietet vollständige Lokalisierung der Benutzeroberfläche und Übersetzungsunterstützung für **17 Hauptsprachen**:
 
-| Sprache | Code | Nativer Name |
+| Sprache | Code | Name in Landessprache |
 | :--- | :--- | :--- |
 | 🇬🇧 Englisch | `en_us` | English |
 | 🇹🇷 Türkisch | `tr_tr` | Türkçe |
@@ -75,40 +83,39 @@ Der Mod bietet vollständige UI-Lokalisierung und Übersetzung für **17 Hauptsp
 
 ## ⚙️ Übersetzungs-Engines
 
-Sie können die Übersetzungs-Engine im Konfigurationsmenü (`/translate`, ModMenu oder Taste **Z**) frei wählen.
+Wählen Sie Ihre bevorzugte Engine im Konfigurationsmenü (`/translate`, ModMenu oder Taste **Z**).
 
 | Engine | Beschreibung |
 |---|---|
-| 🤖 **Gemini AI** | Neueste Gemini-Modelle von Google (Gemini 2.5 Flash, Flash-Lite). Kostenloser Schlüssel auf [Google AI Studio](https://aistudio.google.com). |
-| ⚡ **Groq AI** | Ultraschnelle LLMs (Llama 3.3 70B, Qwen3) für bestes Verständnis von Minecraft-Begriffen. Kostenloser Schlüssel auf [console.groq.com](https://console.groq.com). |
-| 🌪️ **Mistral AI** | Leistungsstarke Mistral-Modelle (Mistral Large usw.). Zuverlässig und präzise. Kostenloser Schlüssel auf [console.mistral.ai](https://console.mistral.ai). |
-| 🌍 **OpenRouter AI** | Zugriff auf Hunderte Modelle (Claude, Llama, Qwen, DeepSeek) über eine einzige API. Schlüssel auf [openrouter.ai](https://openrouter.ai). |
-| 🌐 **Google Translate** | Kein API-Schlüssel nötig! Unbegrenzte, schnelle und völlig kostenlose Übersetzungen. |
+| 🤖 **Gemini AI** | Googles neueste Gemini-Modelle (Gemini 2.5 Flash usw.). Kostenloser API-Schlüssel auf [Google AI Studio](https://aistudio.google.com). |
+| ⚡ **Groq AI** | Extrem schnelle LLMs (Llama 3.3 70B, Qwen3) für optimales Minecraft-Kontextverständnis. Kostenloser API-Schlüssel auf [console.groq.com](https://console.groq.com). |
+| 🌪️ **Mistral AI** | Leistungsstarke Modelle von Mistral (Mistral Large usw.). Kostenloser API-Schlüssel auf [console.mistral.ai](https://console.mistral.ai). |
+| 🌍 **OpenRouter AI** | Zugriff auf Hunderte Modelle (Claude, Llama, Qwen, DeepSeek usw.) über eine einzige API. Schlüssel erhältlich auf [openrouter.ai](https://openrouter.ai). |
+| 🌐 **Google Translate** | Kein API-Schlüssel erforderlich! Unbegrenzt, schnell und völlig kostenlos. |
 
 ---
 
 ## 🔧 Konfiguration & Befehle
 
-- **In-Game-Menü:** Befehl `/translate`, Tastenkürzel **`Z`** oder `ESC → Optionen → Mods → NPC & Items Translator`
-- **Dynamische Sprache:** Automatische Übersetzung in Ihre Minecraft-Sprache oder Auswahl einer festen Zielsprache.
-- **Tastaturbelegung:** `Optionen → Steuerung → Tastenbelegung → NPC & Items Translator`
-- **Wörterbuch zurücksetzen:** `/translate DeleteDict` oder über das In-Game-Hub-Menü.
+- **Menü im Spiel:** Befehl `/translate`, Taste **`Z`** oder `ESC → Mods → NPC & Items Translator`
+- **Dynamische Sprache:** Automatisch in Ihre Minecraft-Sprache übersetzen oder eine feste Zielsprache wählen.
+- **Tastenbelegungen:** `Optionen → Steuerung → Tastenbelegung → NPC & Items Translator`
+- **Wörterbuch zurücksetzen:** `/translate DeleteDict` oder über das Menü im Spiel.
 
 ---
 
-## 📦 Kompatibilität & Anforderungen
+## 📦 Kompatibilität & Voraussetzungen
 
-- **Loader:** Fabric
+- **Mod-Loader:** Fabric
 - **Unterstützte Minecraft-Versionen:** `1.21.11`, `26.1`, `26.2`, `26.3`
-- **Erforderliche Mods:** 
+- **Benötigte Mods:** 
   - [Fabric API](https://modrinth.com/mod/fabric-api)
   - [YetAnotherConfigLib (YACL)](https://modrinth.com/mod/yacl)
   - [ModMenu](https://modrinth.com/mod/modmenu)
-- **Seite:** NUR Clientseitig (Client-side) — 100% sicher auf allen Multiplayer-Servern einschließlich Hypixel!
+- **Seite:** AUSSCHLIESSLICH clientseitig — 100% sicher auf Multiplayer-Servern wie Hypixel!
 
 ---
 
 ## 📄 Lizenz
 
 MIT-Lizenz
-
