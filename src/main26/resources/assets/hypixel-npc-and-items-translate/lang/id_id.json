@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Posisi Tombol Terjemahan",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Pilih apakah tombol terjemahan muncul di awal atau akhir pesan",
   "npctranslator.config.button_position.start": "Di Awal",
-  "npctranslator.config.button_position.end": "Di Akhir"
+  "npctranslator.config.button_position.end": "Di Akhir",
+  "category.npctranslator.chatbubbles": "Balon Percakapan",
+  "category.npctranslator.chatbubbles.tooltip": "Menampilkan balon dialog terjemahan di atas kepala NPC di dunia.",
+  "group.npctranslator.chatbubbles": "Opsi Balon Percakapan",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Aktifkan Balon Percakapan",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Tampilkan balon bicara tepat di atas kepala karakter saat mereka berbicara.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Durasi Tampilan Balon",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Berapa detik balon tetap terlihat di layar sebelum memudar.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "Hanya NPC",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Hanya tampilkan balon obrolan di atas NPC (abaikan pemain lain).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Jarak Terlihat Maksimum",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Jarak maksimum (dalam blok) saat balon bicara ditampilkan."
 }

@@ -163,6 +163,9 @@ public class NPCTranslatorClient implements ClientModInitializer {
             ORIGINAL_MESSAGES.put(msgId, text.copy());
             MESSAGE_ID_TO_BASE64.put(msgId, encodedText);
 
+            String cachedTranslation = TRANSLATION_MEMORY_CACHE.get(rawText);
+            com.npctranslator.chatbubble.ChatBubbleManager.onChatMessage(msgId, rawText, cachedTranslation);
+
             boolean shouldAutoTranslate = config.autoTranslateChat && (!config.onlyTranslateNpcChat || rawText.contains("[NPC] "));
 
             if (config.enableTts && !shouldAutoTranslate) {
@@ -469,6 +472,7 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 final ClickEvent finalClickEvent = tempClickEvent;
 
                 String translatedText = getTranslatedText(formattedInput, displayLanguageCode, targetLangName, false, config.chatTranslationProvider);
+                com.npctranslator.chatbubble.ChatBubbleManager.onTranslationComplete(msgId, translatedText);
 
                 if (config.enableTts) {
                     boolean isNpcMsg = formattedInput.contains("[NPC] ") || formattedInput.contains("NPC");

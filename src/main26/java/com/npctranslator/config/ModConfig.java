@@ -43,6 +43,8 @@ public class ModConfig {
         if (ttsSpeed <= 0.1f) ttsSpeed = 1.0f;
         if (ttsPitch <= 0.1f) ttsPitch = 1.0f;
         if (buttonPosition == null) buttonPosition = ButtonPosition.START;
+        if (chatBubbleDuration <= 0) chatBubbleDuration = 6;
+        if (chatBubbleMaxDistance <= 0) chatBubbleMaxDistance = 16;
     }
 
     public static void save() {
@@ -105,6 +107,12 @@ public class ModConfig {
     public TtsEngine ttsEngine = TtsEngine.GOOGLE_TTS;
     public float ttsSpeed = 1.0f;
     public float ttsPitch = 1.0f;
+
+    // Chat Bubbles (Sohbet Balonları)
+    public boolean enableChatBubbles = true;
+    public int chatBubbleDuration = 6;
+    public boolean chatBubbleNpcOnly = true;
+    public int chatBubbleMaxDistance = 16;
 
     public enum TtsMode {
         NPC_ONLY("npctranslator.config.tts.mode.npc_only"),

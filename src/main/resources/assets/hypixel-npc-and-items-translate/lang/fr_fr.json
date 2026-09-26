@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Position du bouton de traduction",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Détermine si le bouton apparaît au début ou à la fin du message",
   "npctranslator.config.button_position.start": "Au début",
-  "npctranslator.config.button_position.end": "À la fin"
+  "npctranslator.config.button_position.end": "À la fin",
+  "category.npctranslator.chatbubbles": "Bulles de discussion",
+  "category.npctranslator.chatbubbles.tooltip": "Affiche les bulles de dialogue traduites au-dessus des têtes des PNJ.",
+  "group.npctranslator.chatbubbles": "Options des bulles de discussion",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Activer les bulles de discussion",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Affiche des bulles de dialogue au-dessus des personnages lorsqu'ils parlent.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Durée d'affichage de la bulle",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Durée d'affichage de la bulle en secondes avant sa disparition.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "PNJ uniquement",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Afficher uniquement les bulles au-dessus des PNJ (ignorer les joueurs).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Distance maximale de visibilité",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Distance maximale (en blocs) pour voir les bulles de dialogue."
 }

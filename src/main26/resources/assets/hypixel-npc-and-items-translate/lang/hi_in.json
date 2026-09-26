@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "अनुवाद बटन की स्थिति",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "चुनें कि अनुवाद बटन संदेश की शुरुआत में दिखाई दे या अंत में",
   "npctranslator.config.button_position.start": "शुरुआत में",
-  "npctranslator.config.button_position.end": "अंत में"
+  "npctranslator.config.button_position.end": "अंत में",
+  "category.npctranslator.chatbubbles": "चैट बबल्स (बातचीत के बुलबुले)",
+  "category.npctranslator.chatbubbles.tooltip": "दुनिया में एनपीसी के सिर के ऊपर अनुवादित संवाद बुलबुले दिखाएं।",
+  "group.npctranslator.chatbubbles": "चैट बबल विकल्प",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "चैट बबल्स चालू करें",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "जब पात्र बात करें तो सीधे उनके सिर के ऊपर संवाद का बुलबुला दिखाएं।",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "बबल दिखने का समय",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "गायब होने से पहले बबल स्क्रीन पर कितने सेकंड तक दिखाई देता है।",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "केवल NPC",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "केवल एनपीसी के सिर के ऊपर चैट बबल दिखाएं (अन्य खिलाड़ियों को अनदेखा करें)।",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "अधिकतम दृश्य दूरी",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "अधिकतम दूरी (ब्लॉक में) जहां संवाद बुलबुले दिखाए जाते हैं।"
 }

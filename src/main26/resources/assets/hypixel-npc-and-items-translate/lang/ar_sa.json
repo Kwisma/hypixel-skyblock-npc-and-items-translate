@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "موضع زر الترجمة",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "اختر ما إذا كان زر الترجمة يظهر في بداية الرسالة أو نهايتها",
   "npctranslator.config.button_position.start": "في البداية",
-  "npctranslator.config.button_position.end": "في النهاية"
+  "npctranslator.config.button_position.end": "في النهاية",
+  "category.npctranslator.chatbubbles": "فقاعات المحادثة",
+  "category.npctranslator.chatbubbles.tooltip": "عرض فقاعات الحوار المترجمة فوق رؤوس الشخصيات في العالم.",
+  "group.npctranslator.chatbubbles": "خيارات فقاعات المحادثة",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "تفعيل فقاعات المحادثة",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "إظهار فقاعات المحادثة مباشرة فوق رؤوس الشخصيات عندما تتحدث.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "مدة ظهور الفقاعة",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "عدد الثواني التي تبقى فيها الفقاعة مرئية قبل أن تتلاشى.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "الشخصيات (NPC) فقط",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "إظهار الفقاعات فقط فوق رؤوس الشخصيات (تجاهل اللاعبين الآخرين).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "أقصى مسافة للرؤية",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "أقصى مسافة (بالكتل) تظهر فيها فقاعات المحادثة."
 }

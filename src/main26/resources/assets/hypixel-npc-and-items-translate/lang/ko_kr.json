@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "번역 버튼 위치",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "번역 버튼을 메시지의 시작 부분에 표시할지 끝 부분에 표시할지 선택합니다",
   "npctranslator.config.button_position.start": "시작 부분",
-  "npctranslator.config.button_position.end": "끝 부분"
+  "npctranslator.config.button_position.end": "끝 부분",
+  "category.npctranslator.chatbubbles": "말풍선",
+  "category.npctranslator.chatbubbles.tooltip": "월드의 NPC 머리 위에 번역된 말풍선을 표시합니다.",
+  "group.npctranslator.chatbubbles": "말풍선 설정",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "말풍선 활성화",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "캐릭터가 대화할 때 머리 위에 대화 말풍선을 표시합니다.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "말풍선 표시 시간",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "말풍선이 사라지기 전 화면에 유지되는 시간(초).",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "NPC 전용",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "NPC 머리 위에만 말풍선을 표시합니다(다른 플레이어 무시).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "최대 표시 거리",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "말풍선이 표시되는 최대 블록 거리입니다."
 }

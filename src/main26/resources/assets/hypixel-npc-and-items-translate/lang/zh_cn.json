@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "翻译按钮位置",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "设置翻译按钮显示在消息开头还是结尾",
   "npctranslator.config.button_position.start": "开头",
-  "npctranslator.config.button_position.end": "结尾"
+  "npctranslator.config.button_position.end": "结尾",
+  "category.npctranslator.chatbubbles": "聊天气泡",
+  "category.npctranslator.chatbubbles.tooltip": "在世界中NPC头顶显示翻译后的聊天气泡。",
+  "group.npctranslator.chatbubbles": "聊天气泡选项",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "启用聊天气泡",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "当角色说话时，直接在其头顶显示对话气泡。",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "气泡显示时长",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "气泡在淡出消失前在屏幕上停留的秒数。",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "仅限 NPC",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "仅在 NPC 头顶显示气泡（忽略其他玩家）。",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "最大可见距离",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "显示对话气泡的最大方块距离。"
 }

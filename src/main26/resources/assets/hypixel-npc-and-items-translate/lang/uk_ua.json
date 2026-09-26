@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Положення кнопки перекладу",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Визначає, чи відображається кнопка на початку, чи в кінці повідомлення",
   "npctranslator.config.button_position.start": "На початку",
-  "npctranslator.config.button_position.end": "В кінці"
+  "npctranslator.config.button_position.end": "В кінці",
+  "category.npctranslator.chatbubbles": "Хмаринки чату",
+  "category.npctranslator.chatbubbles.tooltip": "Відображати перекладені хмаринки діалогів над головами NPC у світі.",
+  "group.npctranslator.chatbubbles": "Параметри хмаринок чату",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Увімкнути хмаринки чату",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Показувати хмаринки реплік прямо над головами персонажів під час розмови.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Тривалість показу",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Скільки секунд хмаринка залишається на екрані перед зникненням.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "Тільки NPC",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Показувати хмаринки тільки над NPC (ігнорувати інших гравців).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Максимальна відстань",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Максимальна відстань (у блоках), на якій видно хмаринки."
 }

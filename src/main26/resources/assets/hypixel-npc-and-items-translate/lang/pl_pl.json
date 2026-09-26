@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Pozycja przycisku tłumaczenia",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Wybierz, czy przycisk ma pojawiać się na początku, czy na końcu wiadomości",
   "npctranslator.config.button_position.start": "Na początku",
-  "npctranslator.config.button_position.end": "Na końcu"
+  "npctranslator.config.button_position.end": "Na końcu",
+  "category.npctranslator.chatbubbles": "Dymki czatu",
+  "category.npctranslator.chatbubbles.tooltip": "Wyświetlaj przetłumaczone dymki dialogowe nad głowami NPC na świecie.",
+  "group.npctranslator.chatbubbles": "Opcje dymków czatu",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Włącz dymki czatu",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Pokaż dymki mowy bezpośrednio nad głowami postaci, gdy mówią.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Czas wyświetlania dymka",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Ile sekund dymek pozostaje widoczny na ekranie przed zniknięciem.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "Tylko NPC",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Pokazuj dymki tylko nad głowami NPC (ignoruj innych graczy).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Maksymalna odległość widoczności",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Maksymalny dystans (w blokach), w którym pokazywane są dymki mowy."
 }

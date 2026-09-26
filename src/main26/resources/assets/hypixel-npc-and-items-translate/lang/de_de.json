@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Position der Übersetzungsschaltfläche",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Legt fest, ob die Schaltfläche am Anfang oder am Ende der Nachricht angezeigt wird",
   "npctranslator.config.button_position.start": "Am Anfang",
-  "npctranslator.config.button_position.end": "Am Ende"
+  "npctranslator.config.button_position.end": "Am Ende",
+  "category.npctranslator.chatbubbles": "Sprechblasen",
+  "category.npctranslator.chatbubbles.tooltip": "Übersetzte Sprechblasen über den Köpfen von NPCs in der Welt anzeigen.",
+  "group.npctranslator.chatbubbles": "Sprechblasen-Optionen",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Sprechblasen aktivieren",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Sprechblasen direkt über den Köpfen von Charakteren anzeigen, wenn sie sprechen.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Anzeigedauer der Blase",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Wie viele Sekunden die Sprechblase sichtbar bleibt, bevor sie verblasst.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "Nur NPCs",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Sprechblasen nur über NPCs anzeigen (andere Spieler ignorieren).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Maximale Sichtweite",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Maximale Entfernung (in Blöcken), in der Sprechblasen angezeigt werden."
 }

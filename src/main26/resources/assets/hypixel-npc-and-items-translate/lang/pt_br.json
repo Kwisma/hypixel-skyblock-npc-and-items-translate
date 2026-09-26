@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Posição do botão de tradução",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Escolhe se o botão aparece no início ou no final da mensagem",
   "npctranslator.config.button_position.start": "No início",
-  "npctranslator.config.button_position.end": "No final"
+  "npctranslator.config.button_position.end": "No final",
+  "category.npctranslator.chatbubbles": "Balões de Fala",
+  "category.npctranslator.chatbubbles.tooltip": "Exibe balões de diálogo traduzidos sobre as cabeças dos NPCs no mundo.",
+  "group.npctranslator.chatbubbles": "Opções de Balões de Fala",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Ativar Balões de Fala",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Mostra balões de diálogo diretamente acima da cabeça dos personagens ao falar.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Duração do Balão",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Quantos segundos o balão permanece visível na tela antes de sumir.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "Apenas NPCs",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Mostrar balões apenas acima dos NPCs (ignorar outros jogadores).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Distância Máxima Visível",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Distância máxima (em blocos) em que os balões de fala são exibidos."
 }

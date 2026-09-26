@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "翻訳ボタンの位置",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "翻訳ボタンをメッセージの先頭か末尾のどちらに表示するか選択します",
   "npctranslator.config.button_position.start": "先頭",
-  "npctranslator.config.button_position.end": "末尾"
+  "npctranslator.config.button_position.end": "末尾",
+  "category.npctranslator.chatbubbles": "吹き出しチャット",
+  "category.npctranslator.chatbubbles.tooltip": "ワールド内のNPCの頭上に翻訳されたセリフの吹き出しを表示します。",
+  "group.npctranslator.chatbubbles": "吹き出し設定",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "吹き出しを有効化",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "キャラクターが話したとき、直接頭上に吹き出しを表示します。",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "吹き出しの表示時間",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "吹き出しが消えるまでに画面に表示される秒数。",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "NPCのみ",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "NPCの頭上にのみ吹き出しを表示します（他のプレイヤーは無視）。",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "最大表示距離",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "吹き出しが表示される最大距離（ブロック単位）。"
 }

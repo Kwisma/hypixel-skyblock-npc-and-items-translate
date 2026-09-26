@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Posición del botón de traducción",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Elige si el botón aparece al principio o al final del mensaje",
   "npctranslator.config.button_position.start": "Al principio",
-  "npctranslator.config.button_position.end": "Al final"
+  "npctranslator.config.button_position.end": "Al final",
+  "category.npctranslator.chatbubbles": "Burbujas de chat",
+  "category.npctranslator.chatbubbles.tooltip": "Muestra burbujas de diálogo traducidas sobre las cabezas de los NPC en el mundo.",
+  "group.npctranslator.chatbubbles": "Opciones de burbujas de chat",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Habilitar burbujas de chat",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Muestra burbujas de diálogo directamente sobre la cabeza de los personajes al hablar.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Duración de la burbuja",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Cuántos segundos permanece visible la burbuja en pantalla antes de desaparecer.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "Solo NPC",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Solo mostrar burbujas de chat sobre cabezas de NPC (ignorar otros jugadores).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Distancia máxima visible",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Distancia máxima (en bloques) a la que se muestran las burbujas."
 }

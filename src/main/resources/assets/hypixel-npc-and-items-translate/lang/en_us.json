@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Translate Button Position",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Choose whether the translate button appears at the beginning or end of the message",
   "npctranslator.config.button_position.start": "Beginning",
-  "npctranslator.config.button_position.end": "End"
+  "npctranslator.config.button_position.end": "End",
+  "category.npctranslator.chatbubbles": "Chat Bubbles",
+  "category.npctranslator.chatbubbles.tooltip": "Display translated speech bubbles above NPC heads in the world.",
+  "group.npctranslator.chatbubbles": "Chat Bubble Options",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Enable Chat Bubbles",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Show speech bubbles directly above character heads when they speak.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Bubble Display Duration",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "How many seconds the bubble stays visible on screen before fading out.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "NPCs Only",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Only show chat bubbles above NPC heads (ignore other players).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Maximum Visible Distance",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Maximum distance (in blocks) at which speech bubbles are shown."
 }

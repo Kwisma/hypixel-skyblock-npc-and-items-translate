@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Vị trí nút dịch",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Chọn nút dịch xuất hiện ở đầu hay cuối tin nhắn",
   "npctranslator.config.button_position.start": "Ở đầu",
-  "npctranslator.config.button_position.end": "Ở cuối"
+  "npctranslator.config.button_position.end": "Ở cuối",
+  "category.npctranslator.chatbubbles": "Bóng thoại",
+  "category.npctranslator.chatbubbles.tooltip": "Hiển thị bóng thoại đã dịch trên đầu NPC trong thế giới.",
+  "group.npctranslator.chatbubbles": "Tùy chọn bóng thoại",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Bật bóng thoại",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Hiển thị bóng đối thoại trực tiếp trên đầu nhân vật khi họ nói chuyện.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Thời gian hiển thị",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Số giây bóng thoại hiển thị trên màn hình trước khi mờ dần.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "Chỉ NPC",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Chỉ hiển thị bóng thoại trên đầu NPC (bỏ qua người chơi khác).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Khoảng cách hiển thị tối đa",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Khoảng cách tối đa (tính theo khối) để bóng thoại xuất hiện."
 }

@@ -8,7 +8,8 @@
     "CommandInterceptMixin",
     "ChatHudAccessor",
     "ItemStackMixin",
-    "DrawContextMixin"
+    "DrawContextMixin",
+    "InGameHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

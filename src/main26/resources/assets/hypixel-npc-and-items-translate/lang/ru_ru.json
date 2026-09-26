@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Положение кнопки перевода",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Определяет, отображается ли кнопка в начале или в конце сообщения",
   "npctranslator.config.button_position.start": "В начале",
-  "npctranslator.config.button_position.end": "В конце"
+  "npctranslator.config.button_position.end": "В конце",
+  "category.npctranslator.chatbubbles": "Облачка чата",
+  "category.npctranslator.chatbubbles.tooltip": "Отображать переведённые облачка диалогов над головами NPC в мире.",
+  "group.npctranslator.chatbubbles": "Параметры облачков чата",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Включить облачка чата",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Показывать облачка реплик прямо над головами персонажей, когда они говорят.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Длительность показа",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Сколько секунд облачко остаётся на экране перед исчезновением.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "Только NPC",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Показывать облачка только над NPC (игнорировать обычных игроков).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Максимальная дистанция",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Максимальное расстояние (в блоках), на котором видны облачка."
 }

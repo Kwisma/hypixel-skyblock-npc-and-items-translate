@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Çeviri Butonu Konumu",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Çevir butonunun mesajın başında mı yoksa sonunda mı görüneceğini belirler",
   "npctranslator.config.button_position.start": "Başta",
-  "npctranslator.config.button_position.end": "Sonda"
+  "npctranslator.config.button_position.end": "Sonda",
+  "category.npctranslator.chatbubbles": "Sohbet Balonları",
+  "category.npctranslator.chatbubbles.tooltip": "Dünyadaki NPC'lerin başının üzerinde çevrilmiş sohbet balonları gösterir.",
+  "group.npctranslator.chatbubbles": "Sohbet Balonu Ayarları",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Sohbet Balonlarını Etkinleştir",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Karakterler konuştuğunda doğrudan başlarının üzerinde konuşma balonu gösterir.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Balon Gösterim Süresi",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Balonun kaybolmadan önce ekranda kaç saniye kalacağını belirler.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "Yalnızca NPC'ler",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Sadece NPC'lerin üzerinde balon gösterir (diğer oyuncuları yoksayar).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Maksimum Görünürlük Mesafesi",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Sohbet balonlarının görüntüleneceği maksimum blok mesafesi."
 }

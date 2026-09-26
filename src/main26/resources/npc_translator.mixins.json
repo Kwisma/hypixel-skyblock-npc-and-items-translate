@@ -8,7 +8,8 @@
     "CommandInterceptMixin",
     "ChatHudAccessor",
     "ItemStackMixin",
-    "GuiGraphicsMixin"
+    "GuiGraphicsMixin",
+    "ChatComponentMixin"
   ],
   "injectors": {
     "defaultRequire": 1

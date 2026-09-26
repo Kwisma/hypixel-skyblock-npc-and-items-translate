@@ -125,5 +125,16 @@
   "text.autoconfig.npc_translator.option.buttonPosition": "Posizione del pulsante di traduzione",
   "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Scegli se il pulsante appare all'inizio o alla fine del messaggio",
   "npctranslator.config.button_position.start": "All'inizio",
-  "npctranslator.config.button_position.end": "Alla fine"
+  "npctranslator.config.button_position.end": "Alla fine",
+  "category.npctranslator.chatbubbles": "Fumetti di chat",
+  "category.npctranslator.chatbubbles.tooltip": "Mostra i fumetti di dialogo tradotti sopra la testa degli NPC nel mondo.",
+  "group.npctranslator.chatbubbles": "Opzioni fumetti di chat",
+  "text.autoconfig.npc_translator.option.enableChatBubbles": "Abilita fumetti di chat",
+  "text.autoconfig.npc_translator.option.enableChatBubbles.tooltip": "Mostra fumetti di dialogo sopra le teste dei personaggi quando parlano.",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration": "Durata visibilità fumetto",
+  "text.autoconfig.npc_translator.option.chatBubbleDuration.tooltip": "Secondi di permanenza a schermo del fumetto prima che svanisca.",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly": "Solo NPC",
+  "text.autoconfig.npc_translator.option.chatBubbleNpcOnly.tooltip": "Mostra i fumetti solo sopra la testa degli NPC (ignora gli altri giocatori).",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance": "Distanza massima visibile",
+  "text.autoconfig.npc_translator.option.chatBubbleMaxDistance.tooltip": "Distanza massima (in blocchi) entro cui visualizzare i fumetti."
 }
