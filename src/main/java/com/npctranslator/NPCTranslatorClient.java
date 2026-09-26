@@ -1273,24 +1273,62 @@ public class NPCTranslatorClient implements ClientModInitializer {
             }
 
             float effectiveRate = Math.max(0.2f, Math.min(3.0f, speed * pitch));
-            int mciSpeed = Math.round(effectiveRate * 1000.0f);
             String filePath = tempMp3.getAbsolutePath().replace("\\", "/");
+            String os = System.getProperty("os.name", "").toLowerCase(java.util.Locale.ROOT);
 
-            mciSend("close all");
-            int rOpen = mciSend("open \"" + filePath + "\" type mpegvideo alias npctts");
-            if (rOpen != 0) {
-                System.err.println("[NPCTranslator] MCI open failed (code " + rOpen + ") for " + filePath);
+            if (os.contains("win")) {
+                playWindowsMci(filePath, effectiveRate);
+            } else if (os.contains("mac")) {
+                playMacAfplay(tempMp3, effectiveRate);
+            } else {
+                playLinuxAudio(tempMp3);
             }
-            mciSend("set npctts speed " + mciSpeed);
-            int rPlay = mciSend("play npctts wait");
-            if (rPlay != 0) {
-                System.err.println("[NPCTranslator] MCI play failed (code " + rPlay + ")");
-            }
-            mciSend("close npctts");
         } catch (Exception e) {
             System.err.println("[NPCTranslator] TTS playback error: " + e.getMessage());
         } finally {
             if (tempMp3 != null) try { tempMp3.delete(); } catch (Exception ignored) {}
+        }
+    }
+
+    private static void playWindowsMci(String filePath, float effectiveRate) {
+        int mciSpeed = Math.round(effectiveRate * 1000.0f);
+        mciSend("close all");
+        int rOpen = mciSend("open \"" + filePath + "\" type mpegvideo alias npctts");
+        if (rOpen != 0) {
+            System.err.println("[NPCTranslator] MCI open failed (code " + rOpen + ") for " + filePath);
+        }
+        mciSend("set npctts speed " + mciSpeed);
+        int rPlay = mciSend("play npctts wait");
+        if (rPlay != 0) {
+            System.err.println("[NPCTranslator] MCI play failed (code " + rPlay + ")");
+        }
+        mciSend("close npctts");
+    }
+
+    private static void playMacAfplay(java.io.File file, float rate) {
+        try {
+            float clampedRate = Math.max(0.5f, Math.min(2.0f, rate));
+            ProcessBuilder pb = new ProcessBuilder("/usr/bin/afplay", "-r", String.format(java.util.Locale.ROOT, "%.2f", clampedRate), file.getAbsolutePath());
+            Process p = pb.start();
+            p.waitFor(90, java.util.concurrent.TimeUnit.SECONDS);
+            if (p.isAlive()) p.destroyForcibly();
+        } catch (Exception e) {
+            System.err.println("[NPCTranslator] afplay failed: " + e.getMessage());
+        }
+    }
+
+    private static void playLinuxAudio(java.io.File file) {
+        String[] players = new String[]{"ffplay -nodisp -autoexit -loglevel quiet", "mpv --no-video --really-quiet", "play -q"};
+        for (String pcmd : players) {
+            try {
+                String[] parts = pcmd.split(" ");
+                java.util.List<String> cmd = new java.util.ArrayList<>(java.util.Arrays.asList(parts));
+                cmd.add(file.getAbsolutePath());
+                Process p = new ProcessBuilder(cmd).start();
+                p.waitFor(90, java.util.concurrent.TimeUnit.SECONDS);
+                if (p.isAlive()) p.destroyForcibly();
+                if (p.exitValue() == 0) return;
+            } catch (Exception ignored) {}
         }
     }
 
