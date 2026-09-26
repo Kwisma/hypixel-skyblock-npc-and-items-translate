@@ -32,7 +32,11 @@ Mesajı anında çevirmek için butona tıklamanız yeterli!
 NPC diyaloglarını ve sohbeti kendi dilinizde sesli olarak dinleyin!
 - **Doğal Ses Çıkışı:** Çevrilen NPC mesajlarını yüksek kaliteli Google TTS motoru ile otomatik olarak seslendirir.
 - **Detaylı Ayarlar:** **Konuşma Hızı** (0.25x - 2.00x) ve **Ses Tonu / Kalınlık** (0.60x - 1.40x) ayarlarını menüden anlık olarak ayarlayabilirsiniz.
-- **Kuyruk Sistemi:** Seri gelen diyaloglar takılmadan sırayla seslendirilir.
+- **Çoklu Platform & Güvenli (Sıfır PowerShell):**
+  - **Windows:** Tamamen bellek içi Windows Multimedia (`winmm.dll`) C API çağrısı. PowerShell, komut istemi veya harici betik kesinlikle çalıştırılmaz; antivirüs uyarısı vermez.
+  - **macOS (MacBook / iMac):** Apple'ın yerleşik CoreAudio (`/usr/bin/afplay`) oynatıcısı ile tam uyumlu; harici hiçbir kurulum gerektirmez ve hız ayarını (`-r`) anlık uygular.
+  - **Linux:** Yaygın sistem ses akışları (`ffplay`, `mpv`, `play`) ile otomatik entegrasyon.
+- **Akıllı Kuyruk Sistemi:** Hızlı akan diyaloglar birbiri üzerine binmeden sırayla ve pürüzsüzce seslendirilir.
 
 ### 📦 İsteğe Bağlı Eşya Açıklaması Çevirisi
 Herhangi bir eşyanın üzerine gelin ve onu tercih ettiğiniz motorla çevirmek için kısayol tuşuna basın:

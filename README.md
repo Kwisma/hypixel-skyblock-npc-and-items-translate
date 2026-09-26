@@ -32,7 +32,11 @@ Click it to instantly translate dialogue into your language!
 Hear NPC dialogue spoken out loud in your language!
 - **Natural Voice Output:** Automatically narrates translated NPC dialogue or chat messages using high-quality Google TTS.
 - **Full Customization:** Adjust **Speech Speed** (0.25x - 2.00x) and **Voice Pitch / Tone** (0.60x - 1.40x) directly in the settings menu.
-- **Smart Queueing:** High-speed dialogue queue ensures smooth playback without stutter or lag.
+- **Cross-Platform & Safe (Zero PowerShell):**
+  - **Windows:** 100% in-memory native Windows Multimedia (`winmm.dll`) playback. No PowerShell, no external command scripts, and zero antivirus false positives.
+  - **macOS (MacBook / iMac):** Native Apple CoreAudio (`/usr/bin/afplay`) player with real-time speed control (`-r`). Works seamlessly out of the box with zero setup.
+  - **Linux:** Automatic native audio pipeline routing (`ffplay`, `mpv`, `play`).
+- **Smart Queueing:** High-speed dialogue queue ensures smooth sequential playback without stutter or overlapping audio.
 
 ### 📦 On-Demand Item Tooltip Translation
 Hover over any item and press customizable hotkeys to translate item lore with your preferred engine:

@@ -32,7 +32,11 @@ Klicken Sie darauf, um Dialoge sofort in Ihre Sprache zu übersetzen!
 Hören Sie NPC-Dialoge laut in Ihrer Sprache!
 - **Natürliche Sprachausgabe:** Liest übersetzte NPC-Nachrichten mithilfe der hochwertigen Google TTS-Engine automatisch vor.
 - **Vollständige Anpassung:** Passen Sie **Sprechgeschwindigkeit** (0.25x - 2.00x) und **Tonhöhe / Stimmlage** (0.60x - 1.40x) direkt im Menü an.
-- **Intelligente Warteschlange:** Schnelle Dialogfolgen werden flüssig und ohne Verzögerung nacheinander vorgelesen.
+- **Plattformübergreifend & Sicher (Kein PowerShell):**
+  - **Windows:** 100% nativer Windows Multimedia (`winmm.dll`) In-Memory-Aufruf. Kein PowerShell, keine externen Skripte und keine Antivirus-Fehlalarme.
+  - **macOS (MacBook / iMac):** Nativer Apple CoreAudio (`/usr/bin/afplay`) Player mit Echtzeit-Geschwindigkeitssteuerung (`-r`). Funktioniert ohne zusätzliche Installationen.
+  - **Linux:** Automatische native Audioweiterleitung (`ffplay`, `mpv`, `play`).
+- **Intelligente Warteschlange:** Schnelle Dialogfolgen werden flüssig, nacheinander und ohne Überlappungen vorgelesen.
 
 ### 📦 Item-Tooltip-Übersetzung per Tastendruck
 Fahren Sie mit der Maus über ein beliebiges Item und drücken Sie benutzerdefinierte Tasten, um die Item-Beschreibung mit Ihrer bevorzugten Übersetzungs-Engine zu übersetzen:
