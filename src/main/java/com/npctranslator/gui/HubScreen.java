@@ -1,7 +1,7 @@
 package com.npctranslator.gui;
 
 import com.npctranslator.NPCTranslatorClient;
-import com.npctranslator.config.ModMenuIntegration;
+import com.npctranslator.config.ModConfigScreen;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawContext;
@@ -27,7 +27,7 @@ public class HubScreen extends Screen {
 
         // Mod Ayarları Butonu
         this.addDrawableChild(ButtonWidget.builder(Text.translatable("npctranslator.welcome.button.modmenu"), button -> {
-            Screen screen = new ModMenuIntegration().getModConfigScreenFactory().create(this);
+            Screen screen = ModConfigScreen.create(this);
             this.client.setScreen(screen);
         }).dimensions(this.width / 2 - buttonWidth / 2, startY, buttonWidth, buttonHeight).build());
 

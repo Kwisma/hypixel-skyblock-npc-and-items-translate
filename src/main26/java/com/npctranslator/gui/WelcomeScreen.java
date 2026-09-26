@@ -1,7 +1,7 @@
 package com.npctranslator.gui;
 
 import com.npctranslator.config.ModConfig;
-import com.npctranslator.config.ModMenuIntegration;
+import com.npctranslator.config.ModConfigScreen;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -35,8 +35,7 @@ public class WelcomeScreen extends Screen {
 
         // 1. "Mod Menüsü" Butonu
         this.addRenderableWidget(Button.builder(Component.translatable("npctranslator.welcome.button.modmenu"), button -> {
-            ModMenuIntegration integration = new ModMenuIntegration();
-            com.npctranslator.NPCTranslatorClient.setScreen(this.minecraft, integration.getModConfigScreenFactory().create(this.parent));
+            com.npctranslator.NPCTranslatorClient.setScreen(this.minecraft, ModConfigScreen.create(this.parent));
         }).bounds(x, startY, buttonWidth, buttonHeight).build());
 
         // 2. "Kapat" Butonu (Bir daha göstermeyi engellemez)
