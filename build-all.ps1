@@ -7,6 +7,7 @@
 $JAVA21 = "C:\Program Files\Microsoft\jdk-21.0.11.10-hotspot"
 $JAVA26 = "$PSScriptRoot\oracleJdk-26"
 $OutputDir = "C:\Users\burha\Desktop\npc-mods"
+$ModVersion = "1.5.1"
 $ScriptDir = $PSScriptRoot
 $WrapperProps = "$ScriptDir\gradle\wrapper\gradle-wrapper.properties"
 $BuildGradle = "$ScriptDir\build.gradle"
@@ -81,7 +82,7 @@ foreach ($v in $Versions) {
         $JarFiles = Get-ChildItem "$ScriptDir\build\libs\npc_translator-*.jar" | Where-Object { $_.Name -notmatch "sources" }
         if ($JarFiles.Count -gt 0) {
             $SrcJar = $JarFiles[0].FullName
-            $DestJar = "$OutputDir\npc_translator-1.5.0-$($v.Suffix).jar"
+            $DestJar = "$OutputDir\npc_translator-$ModVersion-$($v.Suffix).jar"
             Copy-Item $SrcJar $DestJar -Force
             Write-Host " SUCCESS -> $DestJar" -ForegroundColor Green
             $Success += $v.Name
