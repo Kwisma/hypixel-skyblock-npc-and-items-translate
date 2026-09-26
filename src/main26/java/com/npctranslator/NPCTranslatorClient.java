@@ -1545,30 +1545,11 @@ public class NPCTranslatorClient implements ClientModInitializer {
             int mciSpeed = Math.round(effectiveRate * 1000.0f);
             String filePath = tempMp3.getAbsolutePath().replace("\\", "/");
 
-            String script =
-                "$src = @\"\r\n" +
-                "using System;\r\n" +
-                "using System.Runtime.InteropServices;\r\n" +
-                "public class MciPlayer {\r\n" +
-                "    [DllImport(\"winmm.dll\", EntryPoint=\"mciSendStringW\", CharSet=CharSet.Unicode)]\r\n" +
-                "    public static extern int mciSendString(string c, string r, int l, IntPtr h);\r\n" +
-                "}\r\n" +
-                "\"@\r\n" +
-                "Add-Type -TypeDefinition $src\r\n" +
-                "[MciPlayer]::mciSendString('close all', $null, 0, [IntPtr]::Zero)\r\n" +
-                "$f = \"" + filePath + "\"\r\n" +
-                "[MciPlayer]::mciSendString(\"open `\"$f`\" type mpegvideo alias npctts\", $null, 0, [IntPtr]::Zero)\r\n" +
-                "[MciPlayer]::mciSendString(\"set npctts speed " + mciSpeed + "\", $null, 0, [IntPtr]::Zero)\r\n" +
-                "[MciPlayer]::mciSendString(\"play npctts wait\", $null, 0, [IntPtr]::Zero)\r\n" +
-                "[MciPlayer]::mciSendString(\"close npctts\", $null, 0, [IntPtr]::Zero)\r\n";
-
-            // Encode as UTF-16LE + base64 for -EncodedCommand (no shell escaping at all)
-            byte[] scriptBytes = script.getBytes(java.nio.charset.Charset.forName("UTF-16LE"));
-            String encodedScript = java.util.Base64.getEncoder().encodeToString(scriptBytes);
-
-            ProcessBuilder pb = new ProcessBuilder("powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-EncodedCommand", encodedScript);
-            pb.redirectErrorStream(true);
-            proc(pb, 90);
+            mciSend("close all");
+            mciSend("open \"" + filePath + "\" type mpegvideo alias npctts");
+            mciSend("set npctts speed " + mciSpeed);
+            mciSend("play npctts wait");
+            mciSend("close npctts");
         } catch (Exception e) {
             // silently ignore
         } finally {
@@ -1576,10 +1557,16 @@ public class NPCTranslatorClient implements ClientModInitializer {
         }
     }
 
-    /** Runs a ProcessBuilder and waits up to timeoutSeconds. */
-    private static void proc(ProcessBuilder pb, int timeoutSeconds) throws Exception {
-        Process p = pb.start();
-        p.waitFor(timeoutSeconds, java.util.concurrent.TimeUnit.SECONDS);
-        if (p.isAlive()) p.destroyForcibly();
+    private static int mciSend(String command) {
+        try {
+            Class<?> funcClass = Class.forName("com.sun.jna.Function");
+            java.lang.reflect.Method getFunc = funcClass.getMethod("getFunction", String.class, String.class);
+            Object func = getFunc.invoke(null, "winmm", "mciSendStringW");
+            java.lang.reflect.Method invokeInt = funcClass.getMethod("invokeInt", Object[].class);
+            Object res = invokeInt.invoke(func, new Object[]{ new Object[]{ command, null, 0, 0 } });
+            return (Integer) res;
+        } catch (Throwable t) {
+            return -1;
+        }
     }
 }
