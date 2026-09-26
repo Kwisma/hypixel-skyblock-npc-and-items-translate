@@ -1277,28 +1277,67 @@ public class NPCTranslatorClient implements ClientModInitializer {
             String filePath = tempMp3.getAbsolutePath().replace("\\", "/");
 
             mciSend("close all");
-            mciSend("open \"" + filePath + "\" type mpegvideo alias npctts");
+            int rOpen = mciSend("open \"" + filePath + "\" type mpegvideo alias npctts");
+            if (rOpen != 0) {
+                System.err.println("[NPCTranslator] MCI open failed (code " + rOpen + ") for " + filePath);
+            }
             mciSend("set npctts speed " + mciSpeed);
-            mciSend("play npctts wait");
+            int rPlay = mciSend("play npctts wait");
+            if (rPlay != 0) {
+                System.err.println("[NPCTranslator] MCI play failed (code " + rPlay + ")");
+            }
             mciSend("close npctts");
         } catch (Exception e) {
-            // silently ignore
+            System.err.println("[NPCTranslator] TTS playback error: " + e.getMessage());
         } finally {
             if (tempMp3 != null) try { tempMp3.delete(); } catch (Exception ignored) {}
         }
     }
 
-    private static int mciSend(String command) {
+    private static Object mciWFunc = null;
+    private static java.lang.reflect.Method mciInvokeInt = null;
+    private static java.lang.reflect.Constructor<?> mciWStringCons = null;
+    private static Object mciAFunc = null;
+    private static boolean mciInitialized = false;
+
+    private static synchronized void initMci() {
+        if (mciInitialized) return;
+        mciInitialized = true;
         try {
             Class<?> funcClass = Class.forName("com.sun.jna.Function");
             java.lang.reflect.Method getFunc = funcClass.getMethod("getFunction", String.class, String.class);
-            Object func = getFunc.invoke(null, "winmm", "mciSendStringW");
-            java.lang.reflect.Method invokeInt = funcClass.getMethod("invokeInt", Object[].class);
-            Object res = invokeInt.invoke(func, new Object[]{ new Object[]{ command, null, 0, 0 } });
-            return (Integer) res;
+            mciInvokeInt = funcClass.getMethod("invokeInt", Object[].class);
+
+            try {
+                Class<?> wstrClass = Class.forName("com.sun.jna.WString");
+                mciWStringCons = wstrClass.getConstructor(String.class);
+                mciWFunc = getFunc.invoke(null, "winmm", "mciSendStringW");
+            } catch (Throwable ignored) {}
+
+            try {
+                mciAFunc = getFunc.invoke(null, "winmm", "mciSendStringA");
+            } catch (Throwable ignored) {}
         } catch (Throwable t) {
-            return -1;
+            System.err.println("[NPCTranslator] JNA MCI bridge init failed: " + t);
         }
+    }
+
+    private static int mciSend(String command) {
+        initMci();
+        if (mciWFunc != null && mciWStringCons != null && mciInvokeInt != null) {
+            try {
+                Object wstr = mciWStringCons.newInstance(command);
+                Object res = mciInvokeInt.invoke(mciWFunc, new Object[]{ new Object[]{ wstr, null, 0, 0 } });
+                return (Integer) res;
+            } catch (Throwable ignored) {}
+        }
+        if (mciAFunc != null && mciInvokeInt != null) {
+            try {
+                Object res = mciInvokeInt.invoke(mciAFunc, new Object[]{ new Object[]{ command, null, 0, 0 } });
+                return (Integer) res;
+            } catch (Throwable ignored) {}
+        }
+        return -1;
     }
 }
 
