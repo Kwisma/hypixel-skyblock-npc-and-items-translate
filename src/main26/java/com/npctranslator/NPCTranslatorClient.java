@@ -99,18 +99,29 @@ public class NPCTranslatorClient implements ClientModInitializer {
     }
 
     public static void setScreen(Minecraft client, Screen screen) {
+        if (client == null) return;
         try {
             // Try 1.21.11 and 26.1
             java.lang.reflect.Method setScreenMethod = client.getClass().getMethod("setScreen", Screen.class);
             setScreenMethod.invoke(client, screen);
-        } catch (Exception e) {
+        } catch (NoSuchMethodException e) {
             try {
-                // Try 26.2
+                // Try 26.2 and 26.3
                 java.lang.reflect.Method setScreenMethod = client.gui.getClass().getMethod("setScreen", Screen.class);
                 setScreenMethod.invoke(client.gui, screen);
+            } catch (NoSuchMethodException ex) {
+                try {
+                    // Try 26.3 setScreenAndShow
+                    java.lang.reflect.Method setScreenMethod = client.getClass().getMethod("setScreenAndShow", Screen.class);
+                    setScreenMethod.invoke(client, screen);
+                } catch (Exception ex2) {
+                    ex2.printStackTrace();
+                }
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -132,12 +143,14 @@ public class NPCTranslatorClient implements ClientModInitializer {
     }
 
     private static boolean isKeyCurrentlyDown(KeyMapping keyMapping) {
+        if (keyMapping == null || keyMapping.isUnbound()) return false;
         Minecraft client = Minecraft.getInstance();
         if (client == null) return keyMapping.isDown();
         try {
             com.mojang.blaze3d.platform.InputConstants.Key key = com.mojang.blaze3d.platform.InputConstants.getKey(keyMapping.saveString());
+            if (key == null || key.equals(InputConstants.UNKNOWN)) return false;
             int keyCode = key.getValue();
-            if (keyCode >= 0) {
+            if (keyCode != InputConstants.UNKNOWN.getValue() && keyCode > 0) {
                 // 26.3+ SDL: isKeyDown(int)
                 try {
                     java.lang.reflect.Method m = com.mojang.blaze3d.platform.InputConstants.class.getMethod("isKeyDown", int.class);
@@ -234,14 +247,14 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
         keyTranslateMistral = new KeyMapping(
                 "key.npctranslator.translate.mistral",
-                -1,
+                InputConstants.UNKNOWN.getValue(),
                 finalCategory
         );
         KeyMappingHelper.registerKeyMapping(keyTranslateMistral);
 
         keyTranslateOpenRouter = new KeyMapping(
                 "key.npctranslator.translate.openrouter",
-                -1,
+                InputConstants.UNKNOWN.getValue(),
                 finalCategory
         );
         KeyMappingHelper.registerKeyMapping(keyTranslateOpenRouter);
