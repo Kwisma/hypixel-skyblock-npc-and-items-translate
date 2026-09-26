@@ -99,7 +99,7 @@
 ## 📦 Совместимость и требования
 
 - **Загрузчик:** Fabric
-- **Поддерживаемые версии Minecraft:** `1.21.11`, `26.1`, `26.2`
+- **Поддерживаемые версии Minecraft:** `1.21.11`, `26.1`, `26.2`, `26.3`
 - **Необходимые моды:** 
   - [Fabric API](https://modrinth.com/mod/fabric-api)
   - [YetAnotherConfigLib (YACL)](https://modrinth.com/mod/yacl)

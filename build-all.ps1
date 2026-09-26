@@ -29,6 +29,7 @@ if (-not (Test-Path $OutputDir)) {
 # Sürüm tanımları
 $Versions = @(
     @{ Name="1.21.11"; Props="gradle.properties";      Suffix="mc1.21.11"; JavaHome=$JAVA21; BuildFile=$null;               GradleUrl=$GRADLE_941; Is26x=$false },
+    @{ Name="26.3";    Props="gradle-26.3.properties"; Suffix="mc26.3";    JavaHome=$JAVA26; BuildFile="build-26x.gradle"; GradleUrl=$GRADLE_960; Is26x=$true  },
     @{ Name="26.2";    Props="gradle-26.2.properties"; Suffix="mc26.2";    JavaHome=$JAVA26; BuildFile="build-26x.gradle"; GradleUrl=$GRADLE_960; Is26x=$true  },
     @{ Name="26.1";    Props="gradle-26.1.properties"; Suffix="mc26.1";    JavaHome=$JAVA26; BuildFile="build-26x.gradle"; GradleUrl=$GRADLE_960; Is26x=$true  }
 )

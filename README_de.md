@@ -99,7 +99,7 @@ Sie können die Übersetzungs-Engine im Konfigurationsmenü (`/translate`, ModMe
 ## 📦 Kompatibilität & Anforderungen
 
 - **Loader:** Fabric
-- **Unterstützte Minecraft-Versionen:** `1.21.11`, `26.1`, `26.2`
+- **Unterstützte Minecraft-Versionen:** `1.21.11`, `26.1`, `26.2`, `26.3`
 - **Erforderliche Mods:** 
   - [Fabric API](https://modrinth.com/mod/fabric-api)
   - [YetAnotherConfigLib (YACL)](https://modrinth.com/mod/yacl)

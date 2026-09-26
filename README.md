@@ -99,7 +99,7 @@ You have full control over the translation backend through the configuration men
 ## 📦 Compatibility & Requirements
 
 - **Loader:** Fabric
-- **Supported Minecraft Versions:** `1.21.11`, `26.1`, `26.2`
+- **Supported Minecraft Versions:** `1.21.11`, `26.1`, `26.2`, `26.3`
 - **Dependencies:** 
   - [Fabric API](https://modrinth.com/mod/fabric-api)
   - [YetAnotherConfigLib (YACL)](https://modrinth.com/mod/yacl)

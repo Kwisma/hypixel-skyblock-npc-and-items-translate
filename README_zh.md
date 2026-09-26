@@ -99,7 +99,7 @@
 ## 📦 兼容性与运行需求
 
 - **模组加载器：** Fabric
-- **支持的 Minecraft 版本：** `1.21.11`, `26.1`, `26.2`
+- **支持的 Minecraft 版本：** `1.21.11`, `26.1`, `26.2`, `26.3`
 - **前置依赖：** 
   - [Fabric API](https://modrinth.com/mod/fabric-api)
   - [YetAnotherConfigLib (YACL)](https://modrinth.com/mod/yacl)

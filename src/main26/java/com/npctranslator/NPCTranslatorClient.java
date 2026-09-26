@@ -24,8 +24,6 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.ChatFormatting;
-// Removed ResourceLocation import
-import org.lwjgl.glfw.GLFW;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -135,18 +133,26 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
     private static boolean isKeyCurrentlyDown(KeyMapping keyMapping) {
         Minecraft client = Minecraft.getInstance();
-        if (client == null || client.getWindow() == null) return keyMapping.isDown();
+        if (client == null) return keyMapping.isDown();
         try {
             com.mojang.blaze3d.platform.InputConstants.Key key = com.mojang.blaze3d.platform.InputConstants.getKey(keyMapping.saveString());
             int keyCode = key.getValue();
             if (keyCode >= 0) {
-                if (keyMapping.saveString().startsWith("key.mouse.")) {
-                    return org.lwjgl.glfw.GLFW.glfwGetMouseButton(client.getWindow().handle(), keyCode) == org.lwjgl.glfw.GLFW.GLFW_PRESS;
-                } else {
-                    return org.lwjgl.glfw.GLFW.glfwGetKey(client.getWindow().handle(), keyCode) == org.lwjgl.glfw.GLFW.GLFW_PRESS;
+                // 26.3+ SDL: isKeyDown(int)
+                try {
+                    java.lang.reflect.Method m = com.mojang.blaze3d.platform.InputConstants.class.getMethod("isKeyDown", int.class);
+                    return (boolean) m.invoke(null, keyCode);
+                } catch (NoSuchMethodException e) {
+                    // 26.1 / 26.2 GLFW: isKeyDown(Window, int)
+                    if (client.getWindow() != null) {
+                        try {
+                            java.lang.reflect.Method m = com.mojang.blaze3d.platform.InputConstants.class.getMethod("isKeyDown", com.mojang.blaze3d.platform.Window.class, int.class);
+                            return (boolean) m.invoke(null, client.getWindow(), keyCode);
+                        } catch (Exception ignored) {}
+                    }
                 }
             }
-        } catch (Exception e) {}
+        } catch (Exception ignored) {}
         return keyMapping.isDown();
     }
 
@@ -207,56 +213,49 @@ public class NPCTranslatorClient implements ClientModInitializer {
 
         keyTranslateGoogle = new KeyMapping(
                 "key.npctranslator.translate.google",
-                InputConstants.Type.KEYSYM,
-                GLFW.GLFW_KEY_G,
+                InputConstants.KEY_G,
                 finalCategory
         );
         KeyMappingHelper.registerKeyMapping(keyTranslateGoogle);
 
         keyTranslateGemini = new KeyMapping(
                 "key.npctranslator.translate.gemini",
-                InputConstants.Type.KEYSYM,
-                GLFW.GLFW_KEY_X,
+                InputConstants.KEY_X,
                 finalCategory
         );
         KeyMappingHelper.registerKeyMapping(keyTranslateGemini);
 
         keyTranslateGroq = new KeyMapping(
                 "key.npctranslator.translate.groq",
-                com.mojang.blaze3d.platform.InputConstants.Type.KEYSYM,
-                org.lwjgl.glfw.GLFW.GLFW_KEY_C,
+                InputConstants.KEY_C,
                 finalCategory
         );
         KeyMappingHelper.registerKeyMapping(keyTranslateGroq);
 
         keyTranslateMistral = new KeyMapping(
                 "key.npctranslator.translate.mistral",
-                com.mojang.blaze3d.platform.InputConstants.Type.KEYSYM,
-                org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
+                -1,
                 finalCategory
         );
         KeyMappingHelper.registerKeyMapping(keyTranslateMistral);
 
         keyTranslateOpenRouter = new KeyMapping(
                 "key.npctranslator.translate.openrouter",
-                com.mojang.blaze3d.platform.InputConstants.Type.KEYSYM,
-                org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,
+                -1,
                 finalCategory
         );
         KeyMappingHelper.registerKeyMapping(keyTranslateOpenRouter);
 
         keyRevertTranslation = new KeyMapping(
                 "key.npctranslator.translate.revert",
-                InputConstants.Type.KEYSYM,
-                GLFW.GLFW_KEY_V,
+                InputConstants.KEY_V,
                 finalCategory
         );
         KeyMappingHelper.registerKeyMapping(keyRevertTranslation);
         
         menuKey = new KeyMapping(
                 "key.npctranslator.menu",
-                InputConstants.Type.KEYSYM,
-                GLFW.GLFW_KEY_Z,
+                InputConstants.KEY_Z,
                 finalCategory
         );
         KeyMappingHelper.registerKeyMapping(menuKey);
