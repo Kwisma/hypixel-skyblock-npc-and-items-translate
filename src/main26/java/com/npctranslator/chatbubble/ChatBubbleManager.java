@@ -6,19 +6,25 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.decoration.ArmorStand;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.regex.Pattern;
 
 public class ChatBubbleManager {
 
-    private static final Map<String, ChatBubble> BUBBLES_BY_SPEAKER = new ConcurrentHashMap<>();
+    private static final Map<String, List<ChatBubble>> BUBBLES_BY_SPEAKER = new ConcurrentHashMap<>();
     private static final Map<String, ChatBubble> BUBBLES_BY_MSG_ID = new ConcurrentHashMap<>();
     private static final Pattern STRIP_COLOR_PATTERN = Pattern.compile("(?i)§[0-9a-fk-or]");
 
-    public static Collection<ChatBubble> getActiveBubbles() {
-        // Clean up expired bubbles
-        BUBBLES_BY_SPEAKER.values().removeIf(b -> b.getAlpha() <= 0f);
+    public static Collection<List<ChatBubble>> getActiveBubbleStacks() {
+        // Clean up expired bubbles from each speaker's stack
+        BUBBLES_BY_SPEAKER.entrySet().removeIf(entry -> {
+            List<ChatBubble> list = entry.getValue();
+            list.removeIf(b -> b.getAlpha() <= 0f);
+            return list.isEmpty();
+        });
         BUBBLES_BY_MSG_ID.values().removeIf(b -> b.getAlpha() <= 0f);
         return BUBBLES_BY_SPEAKER.values();
     }
@@ -54,7 +60,6 @@ public class ChatBubbleManager {
 
         if (speaker.isEmpty() || dialogue.isEmpty()) return;
 
-        // If a translation is provided right away, use it
         String bubbleText = (translatedDialogue != null && !translatedDialogue.isEmpty()) ? translatedDialogue : dialogue;
 
         Minecraft client = Minecraft.getInstance();
@@ -94,9 +99,7 @@ public class ChatBubbleManager {
                     : matchedEntity.getY() + matchedEntity.getEyeHeight() + 0.45;
             bz = matchedEntity.getZ();
         } else {
-            // If NPC only and no entity found nearby, do not create a floating ghost bubble
             if (config.chatBubbleNpcOnly) return;
-            // Otherwise place 2.5 blocks in front of player
             var look = client.player.getLookAngle();
             var eye = client.player.getEyePosition();
             bx = eye.x + look.x * 2.5;
@@ -104,9 +107,25 @@ public class ChatBubbleManager {
             bz = eye.z + look.z * 2.5;
         }
 
-        long durationMs = config.chatBubbleDuration * 1000L;
+        // Dynamic duration: Give enough time to read based on text length (65ms/char)
+        long baseDuration = config.chatBubbleDuration * 1000L;
+        long dynamicDuration = 4000L + (long) (bubbleText.length() * 65L);
+        long durationMs = Math.min(22000L, Math.max(baseDuration, dynamicDuration));
+
         ChatBubble bubble = new ChatBubble(speaker, bubbleText, durationMs, bx, by, bz, entityId, isNpc, msgId);
-        BUBBLES_BY_SPEAKER.put(speaker.toLowerCase(), bubble);
+
+        String speakerKey = speaker.toLowerCase();
+        List<ChatBubble> speakerBubbles = BUBBLES_BY_SPEAKER.computeIfAbsent(speakerKey, k -> new CopyOnWriteArrayList<>());
+
+        // Limit maximum stacked bubbles per speaker to 3 so older ones gracefully fade
+        while (speakerBubbles.size() >= 3) {
+            ChatBubble oldest = speakerBubbles.get(0);
+            oldest.fastFade();
+            speakerBubbles.remove(0);
+        }
+
+        speakerBubbles.add(bubble);
+
         if (msgId != null && !msgId.isEmpty()) {
             BUBBLES_BY_MSG_ID.put(msgId, bubble);
         }
@@ -123,6 +142,8 @@ public class ChatBubbleManager {
             } else {
                 bubble.text = clean.trim();
             }
+            // Ensure at least 4.5 seconds to read the newly translated message
+            bubble.extendDuration(4500L);
         }
     }
 
