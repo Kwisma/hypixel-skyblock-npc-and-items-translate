@@ -291,12 +291,21 @@ public class NPCTranslatorClient implements ClientModInitializer {
                 }
             }
 
+            if (!config.showTranslateButton) {
+                return text;
+            }
+
             MutableComponent originalMessage = text.copy();
             MutableComponent translateButton = Component.translatable("npctranslator.button")
                     .withStyle(style -> style.withColor(ChatFormatting.AQUA)
                             .withClickEvent(new ClickEvent.RunCommand("/translate_npc " + msgId))
                             .withHoverEvent(new HoverEvent.ShowText(Component.translatable("npctranslator.hover"))));
-            return Component.empty().append(originalMessage).append(" ").append(translateButton);
+
+            if (config.buttonPosition == ModConfig.ButtonPosition.END) {
+                return Component.empty().append(originalMessage).append(" ").append(translateButton);
+            } else {
+                return Component.empty().append(translateButton).append(" ").append(originalMessage);
+            }
         });
 
         net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.END_CLIENT_TICK.register(client -> {
@@ -961,13 +970,19 @@ public class NPCTranslatorClient implements ClientModInitializer {
             }
 
             MutableComponent translateButton = Component.translatable("npctranslator.button")
-                    .append(" ")
                     .withStyle(style -> style.withColor(ChatFormatting.AQUA)
                             .withClickEvent(new ClickEvent.RunCommand("/translate_npc " + msgId))
                             .withHoverEvent(new HoverEvent.ShowText(Component.translatable("npctranslator.hover"))));
 
             Component finalMessage = originalMessage;
-            MutableComponent fullOriginal = Component.empty().append(translateButton).append(finalMessage.copy());
+            MutableComponent fullOriginal;
+            if (!config.showTranslateButton) {
+                fullOriginal = Component.empty().append(finalMessage.copy());
+            } else if (config.buttonPosition == ModConfig.ButtonPosition.END) {
+                fullOriginal = Component.empty().append(finalMessage.copy()).append(" ").append(translateButton);
+            } else {
+                fullOriginal = Component.empty().append(translateButton).append(" ").append(finalMessage.copy());
+            }
             String searchMarker = "revert_npc " + msgId;
             client.execute(() -> replaceMessageInChat(client, searchMarker, fullOriginal));
 

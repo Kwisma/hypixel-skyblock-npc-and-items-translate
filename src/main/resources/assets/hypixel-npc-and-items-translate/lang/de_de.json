@@ -119,5 +119,11 @@
   "npctranslator.config.tts.mode.npc_only": "Nur NPCs",
   "npctranslator.config.tts.mode.all_chat": "Gesamter Chat",
   "npctranslator.config.tts.mode.translated_only": "Nur übersetzter Chat",
-  "npctranslator.dict_cleared": "§a✅ Übersetzungswörterbuch gelöscht! (%s Einträge entfernt)"
+  "npctranslator.dict_cleared": "§a✅ Übersetzungswörterbuch gelöscht! (%s Einträge entfernt)",
+  "text.autoconfig.npc_translator.option.showTranslateButton": "Übersetzen-Schaltfläche im Chat anzeigen",
+  "text.autoconfig.npc_translator.option.showTranslateButton.tooltip": "Zeigt die [Übersetzen]-Schaltfläche neben Chatnachrichten an",
+  "text.autoconfig.npc_translator.option.buttonPosition": "Position der Übersetzungsschaltfläche",
+  "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Legt fest, ob die Schaltfläche am Anfang oder am Ende der Nachricht angezeigt wird",
+  "npctranslator.config.button_position.start": "Am Anfang",
+  "npctranslator.config.button_position.end": "Am Ende"
 }

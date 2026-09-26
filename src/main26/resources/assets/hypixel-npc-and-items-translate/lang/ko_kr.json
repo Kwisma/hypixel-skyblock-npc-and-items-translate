@@ -119,5 +119,11 @@
   "npctranslator.config.tts.mode.npc_only": "NPC만",
   "npctranslator.config.tts.mode.all_chat": "모든 채팅",
   "npctranslator.config.tts.mode.translated_only": "번역된 채팅만",
-  "npctranslator.dict_cleared": "§a✅ 번역 사전이 삭제되었습니다! (%s개 항목 삭제됨)"
+  "npctranslator.dict_cleared": "§a✅ 번역 사전이 삭제되었습니다! (%s개 항목 삭제됨)",
+  "text.autoconfig.npc_translator.option.showTranslateButton": "채팅에 번역 버튼 표시",
+  "text.autoconfig.npc_translator.option.showTranslateButton.tooltip": "채팅 메시지 옆에 [번역] 버튼을 표시합니다",
+  "text.autoconfig.npc_translator.option.buttonPosition": "번역 버튼 위치",
+  "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "번역 버튼을 메시지의 시작 부분에 표시할지 끝 부분에 표시할지 선택합니다",
+  "npctranslator.config.button_position.start": "시작 부분",
+  "npctranslator.config.button_position.end": "끝 부분"
 }

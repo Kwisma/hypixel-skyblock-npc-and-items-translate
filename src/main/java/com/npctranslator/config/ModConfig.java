@@ -43,6 +43,7 @@ public class ModConfig {
         if (ttsEngine == null) ttsEngine = TtsEngine.GOOGLE_TTS;
         if (ttsSpeed <= 0.1f) ttsSpeed = 1.0f;
         if (ttsPitch <= 0.1f) ttsPitch = 1.0f;
+        if (buttonPosition == null) buttonPosition = ButtonPosition.START;
     }
 
     public static void save() {
@@ -80,7 +81,25 @@ public class ModConfig {
     public TranslationLanguage targetLanguage = TranslationLanguage.TURKISH;
     public boolean autoTranslateChat = false;
     public boolean onlyTranslateNpcChat = true;
+    public boolean showTranslateButton = true;
+    public ButtonPosition buttonPosition = ButtonPosition.START;
     public boolean autoTranslateItems = false;
+
+    public enum ButtonPosition {
+        START("npctranslator.config.button_position.start"),
+        END("npctranslator.config.button_position.end");
+
+        public final String key;
+
+        ButtonPosition(String key) {
+            this.key = key;
+        }
+
+        @Override
+        public String toString() {
+            return key;
+        }
+    }
 
     public boolean enableTts = false;
     public TtsMode ttsMode = TtsMode.NPC_ONLY;

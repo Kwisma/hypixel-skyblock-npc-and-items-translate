@@ -119,5 +119,11 @@
   "npctranslator.config.tts.mode.npc_only": "Sadece NPC",
   "npctranslator.config.tts.mode.all_chat": "Tüm Sohbet",
   "npctranslator.config.tts.mode.translated_only": "Sadece Çevrilen Sohbet",
-  "npctranslator.dict_cleared": "§a✅ Çeviri sözlüğü silindi! (%s kayıt temizlendi)"
+  "npctranslator.dict_cleared": "§a✅ Çeviri sözlüğü silindi! (%s kayıt temizlendi)",
+  "text.autoconfig.npc_translator.option.showTranslateButton": "Sohbette Çeviri Butonunu Göster",
+  "text.autoconfig.npc_translator.option.showTranslateButton.tooltip": "Sohbet mesajlarının yanında [Çevir] butonunun görünmesini sağlar",
+  "text.autoconfig.npc_translator.option.buttonPosition": "Çeviri Butonu Konumu",
+  "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Çevir butonunun mesajın başında mı yoksa sonunda mı görüneceğini belirler",
+  "npctranslator.config.button_position.start": "Başta",
+  "npctranslator.config.button_position.end": "Sonda"
 }

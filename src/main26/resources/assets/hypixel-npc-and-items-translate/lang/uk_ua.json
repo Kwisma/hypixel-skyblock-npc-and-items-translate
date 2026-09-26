@@ -119,5 +119,11 @@
   "npctranslator.config.tts.mode.npc_only": "Лише NPC",
   "npctranslator.config.tts.mode.all_chat": "Увесь чат",
   "npctranslator.config.tts.mode.translated_only": "Лише перекладений чат",
-  "npctranslator.dict_cleared": "§a✅ Словник перекладів очищено! (Видалено записів: %s)"
+  "npctranslator.dict_cleared": "§a✅ Словник перекладів очищено! (Видалено записів: %s)",
+  "text.autoconfig.npc_translator.option.showTranslateButton": "Показувати кнопку перекладу в чаті",
+  "text.autoconfig.npc_translator.option.showTranslateButton.tooltip": "Відображати кнопку [Перекласти] поруч із повідомленнями в чаті",
+  "text.autoconfig.npc_translator.option.buttonPosition": "Положення кнопки перекладу",
+  "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Визначає, чи відображається кнопка на початку, чи в кінці повідомлення",
+  "npctranslator.config.button_position.start": "На початку",
+  "npctranslator.config.button_position.end": "В кінці"
 }

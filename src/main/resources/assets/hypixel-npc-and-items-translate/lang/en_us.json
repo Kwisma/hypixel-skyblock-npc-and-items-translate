@@ -119,5 +119,11 @@
   "npctranslator.config.tts.mode.npc_only": "NPC Only",
   "npctranslator.config.tts.mode.all_chat": "All Chat",
   "npctranslator.config.tts.mode.translated_only": "Only Translated Chat",
-  "npctranslator.dict_cleared": "§a✅ Translation dictionary cleared! (%s entries removed)"
+  "npctranslator.dict_cleared": "§a✅ Translation dictionary cleared! (%s entries removed)",
+  "text.autoconfig.npc_translator.option.showTranslateButton": "Show Translate Button in Chat",
+  "text.autoconfig.npc_translator.option.showTranslateButton.tooltip": "Show the [Translate] button next to chat messages",
+  "text.autoconfig.npc_translator.option.buttonPosition": "Translate Button Position",
+  "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "Choose whether the translate button appears at the beginning or end of the message",
+  "npctranslator.config.button_position.start": "Beginning",
+  "npctranslator.config.button_position.end": "End"
 }

@@ -119,5 +119,11 @@
   "npctranslator.config.tts.mode.npc_only": "NPCのみ",
   "npctranslator.config.tts.mode.all_chat": "すべてのチャット",
   "npctranslator.config.tts.mode.translated_only": "翻訳されたチャットのみ",
-  "npctranslator.dict_cleared": "§a✅ 翻訳辞書がクリアされました！（%s 件の記録を削除）"
+  "npctranslator.dict_cleared": "§a✅ 翻訳辞書がクリアされました！（%s 件の記録を削除）",
+  "text.autoconfig.npc_translator.option.showTranslateButton": "チャットに翻訳ボタンを表示",
+  "text.autoconfig.npc_translator.option.showTranslateButton.tooltip": "チャットメッセージの横に [翻訳] ボタンを表示します",
+  "text.autoconfig.npc_translator.option.buttonPosition": "翻訳ボタンの位置",
+  "text.autoconfig.npc_translator.option.buttonPosition.tooltip": "翻訳ボタンをメッセージの先頭か末尾のどちらに表示するか選択します",
+  "npctranslator.config.button_position.start": "先頭",
+  "npctranslator.config.button_position.end": "末尾"
 }
